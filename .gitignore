@@ -1,0 +1,19 @@
+# Logs
+*.audit.json
+*.log
+npm-debug.log*
+
+# Environments
+.env
+.env.development
+.env.production
+
+# Folders
+node_modules/
+dist/
+command/
+command*
+
+package-lock.json
+
+tmp/

@@ -1,0 +1,38 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "strict": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "esModuleInterop": true,
+    "sourceMap": false,
+    "strictNullChecks": true,
+    "strictPropertyInitialization": false,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "typeRoots": ["./src/types", "/node_modules/@types"],
+    "removeComments": true,
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "noImplicitReturns": true,
+    "isolatedModules": true,
+    "noEmit": false,
+    "preserveSymlinks": true,
+    "skipLibCheck": true,
+    "baseUrl": "./", 
+    "paths": {
+      "@/*": ["src/*"] 
+    }
+  },
+
+  "include": ["src/**/*", "src/config/generate-migration.ts"],
+  "exclude": ["node_modules"],
+  "ts-node": {
+      "esm": true,
+      "transpileOnly": false // true to disable typechecking
+  }
+}
