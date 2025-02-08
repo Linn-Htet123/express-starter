@@ -1,9 +1,9 @@
+import { HelloController } from "../../controllers/hello.controller.js";
 import { Router } from "express";
 
 const helloWorldRoute = Router();
+const helloWorldController = new HelloController();
 
-helloWorldRoute.get("/", (req, res) => {
-  res.send("Hello World!");
-});
+helloWorldRoute.get("/", helloWorldController.hello);
 
 export default helloWorldRoute;
