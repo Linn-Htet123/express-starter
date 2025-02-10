@@ -2,7 +2,7 @@
   "compilerOptions": {
     "target": "ESNext",
     "module": "ESNext",
-    "moduleResolution": "bundler",
+    "moduleResolution": "node",
     "strict": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
@@ -22,17 +22,13 @@
     "isolatedModules": true,
     "noEmit": false,
     "preserveSymlinks": true,
-    "skipLibCheck": true,
-    "baseUrl": "./", 
-    "paths": {
-      "@/*": ["src/*"] 
-    }
+    "skipLibCheck": true
   },
 
   "include": ["src/**/*", "src/config/generate-migration.ts"],
   "exclude": ["node_modules"],
   "ts-node": {
-      "esm": true,
-      "transpileOnly": false // true to disable typechecking
+    "esm": true,
+    "transpileOnly": false // true to disable typechecking
   }
 }

@@ -1,8 +1,9 @@
 import { Router } from "express";
-import helloWorldRoute from "./api/helloworld.route.js";
+import apiRouter from "./api/index.js";
+
 
 const router = Router();
 
-router.use("/hello", helloWorldRoute);
+router.use("/", apiRouter);
 
 export default router;
