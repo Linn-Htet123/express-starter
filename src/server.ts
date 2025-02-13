@@ -1,6 +1,6 @@
 import { setupApp } from "./app.js";
 import cors from "cors";
-import { ENV } from "./constants/env.js";
+import { ENV } from "./config/env.js";
 const startServer = async () => {
   const app = setupApp();
 

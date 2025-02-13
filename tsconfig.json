@@ -2,7 +2,7 @@
   "compilerOptions": {
     "target": "ESNext",
     "module": "ESNext",
-    "moduleResolution": "bundler",
+    "moduleResolution": "bundler", // Ensure this is correct for your setup
     "strict": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
@@ -14,7 +14,7 @@
     "noFallthroughCasesInSwitch": true,
     "outDir": "./dist",
     "rootDir": "./src",
-    "typeRoots": ["./src/types", "/node_modules/@types"],
+    "typeRoots": ["./src/types", "./node_modules/@types"], 
     "removeComments": true,
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
@@ -23,16 +23,15 @@
     "noEmit": false,
     "preserveSymlinks": true,
     "skipLibCheck": true,
-    "baseUrl": "./", 
-    "paths": {
-      "@/*": ["src/*"] 
+    "baseUrl": ".", // Added for better module resolution
+    "paths": { // Optional: Useful for aliasing paths
+      "@/*": ["./src/*"]
     }
   },
-
   "include": ["src/**/*", "src/config/generate-migration.ts"],
   "exclude": ["node_modules"],
   "ts-node": {
-      "esm": true,
-      "transpileOnly": false // true to disable typechecking
+    "esm": true,
+    "transpileOnly": false // Set to `true` for faster execution (disables type checking)
   }
 }

@@ -5,7 +5,16 @@
   "type": "module",
   "scripts": {
     "dev": "nodemon",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "migration:generate": "ts-node --esm ./src/config/generate-migration.ts",
+    "migration:run": "typeorm-ts-node-esm migration:run -d ./src/config/data-source.ts",
+    "migration:revert": "typeorm-ts-node-esm migration:revert -d ./src/config/data-source.ts",
+    "seed": "ts-node --esm ./src/seeders/seed.ts",
+    "docker:prod": "docker-compose -f docker-compose.yml up",
+    "docker:prod:down": "docker-compose -f docker-compose.yml down",
+    "docker:services": "docker-compose -f docker-compose.yml up mysql redis phpmyadmin",
+    "docker:services:down": "docker-compose -f docker-compose.yml down mysql redis phpmyadmin"
   },
   "keywords": [],
   "author": "",
@@ -13,11 +22,15 @@
   "description": "",
   "dependencies": {
     "@types/cors": "^2.8.17",
+    "child_process": "^1.0.2",
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
+    "mysql2": "^3.12.0",
     "nodemon": "^3.1.9",
-    "ts-node": "^10.9.2"
+    "reflect-metadata": "^0.2.2",
+    "ts-node": "^10.9.2",
+    "typeorm": "^0.3.20"
   },
   "devDependencies": {
     "@types/express": "^5.0.0",
